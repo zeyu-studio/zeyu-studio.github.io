@@ -48,12 +48,6 @@ A dark-themed, elegant restaurant website with a hero section, menu display, and
 
 ---
 
-### 💪 [`fitness.html`](./fitness.html) — Fitness Studio Management System
-An Arabic RTL dashboard for gym management — includes member tracking, class scheduling, and pricing plans.
-> **Stack:** HTML · Tailwind CSS · Vanilla JS · Arabic (RTL)
-
----
-
 ## 🛠️ Tech Stack
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
