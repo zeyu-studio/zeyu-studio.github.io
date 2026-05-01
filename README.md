@@ -8,7 +8,8 @@
 
 [![Website](https://img.shields.io/badge/Website-zeyu--studio.github.io-1e40af?style=flat-square&logo=google-chrome&logoColor=white)](https://zeyu-studio.github.io)
 [![Email](https://img.shields.io/badge/Email-yousef.business98@gmail.com-06b6d4?style=flat-square&logo=gmail&logoColor=white)](mailto:yousef.business98@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-yousefoya-0f172a?style=flat-square&logo=github&logoColor=white)](https://github.com/yousefoya)
+[![GitHub Yousef](https://img.shields.io/badge/GitHub-yousefoya-0f172a?style=flat-square&logo=github&logoColor=white)](https://github.com/yousefoya)
+[![GitHub Zena](https://img.shields.io/badge/GitHub-zena--nasrallah-0f172a?style=flat-square&logo=github&logoColor=white)](https://github.com/zena-nasrallah)
 
 </div>
 
@@ -67,7 +68,9 @@ An Arabic RTL dashboard for gym management — includes member tracking, class s
 Have a project in mind? We'd love to hear from you.
 
 - 📧 **Yousef:** [yousef.business98@gmail.com](mailto:yousef.business98@gmail.com)
+- 💻 **Yousef GitHub:** [github.com/yousefoya](https://github.com/yousefoya)
 - 📱 **Yousef:** +962 78 612 0345
+- 💻 **Zena GitHub:** [github.com/zena-nasrallah](https://github.com/zena-nasrallah)
 - 📱 **Zena:** +962 79 875 1265
 - 🌍 **Location:** Jordan — Available for remote & local projects
 
