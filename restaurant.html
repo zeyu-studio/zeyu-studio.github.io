@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEYU | Fine Dining Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* slate-900 */
+            color: #f8fafc;
+        }
+        h1, h2, h3, h4, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.6)), url('https://image.qwenlm.ai/public_source/cc14e3a0-cd12-4cf0-8055-0d740e894d3c/1377adf04-8164-47d7-be10-f6d81be07eb7.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        .gold-accent {
+            color: #d4af37;
+        }
+        .gold-border {
+            border-color: #d4af37;
+        }
+        .gold-bg {
+            background-color: #d4af37;
+        }
+        .gold-hover:hover {
+            background-color: #b5952f;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-slate-900/90 backdrop-blur-md border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="serif text-3xl font-bold tracking-widest text-white">ZEYU</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-amber-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">About</a>
+                        <a href="#menu" class="hover:text-amber-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Menu</a>
+                        <a href="#reservation" class="bg-amber-600 hover:bg-amber-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-lg shadow-amber-900/20">Book a Table</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-slate-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-700">
+                <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#menu" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Menu</a>
+                <a href="#reservation" class="text-amber-400 block px-3 py-2 rounded-md text-base font-medium">Book a Table</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center hero-bg">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto fade-in-section">
+            <p class="text-amber-400 tracking-[0.3em] text-sm md:text-base mb-4 uppercase font-semibold animate-pulse">Taste the Extraordinary</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+                ZEYU <span class="block text-3xl md:text-5xl font-light mt-2 italic text-gray-300">Culinary Art</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+                Experience a symphony of flavors where modern innovation meets timeless tradition in the heart of the city.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#reservation" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 shadow-xl hover:shadow-amber-600/30 transform hover:-translate-y-1">
+                    Reserve Now
+                </a>
+                <a href="#menu" class="bg-transparent border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 backdrop-blur-sm">
+                    View Menu
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-slate-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-amber-900/20 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 fade-in-section">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-amber-600/20 rounded-lg transform rotate-3"></div>
+                        <img src="https://image.qwenlm.ai/public_source/cc14e3a0-cd12-4cf0-8055-0d740e894d3c/19af21414-9dce-4697-8680-a1471f975da3.png" alt="Signature Dish" class="relative rounded-lg shadow-2xl w-full object-cover h-[500px]">
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 fade-in-section">
+                    <h2 class="text-amber-400 text-sm font-bold tracking-widest uppercase mb-2">Our Story</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 serif">A Journey of <br><span class="italic text-gray-400">Flavor & Soul</span></h3>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        At ZEYU, we believe that dining is more than just sustenance—it is an emotional journey. Founded by Chef Zeyu, our kitchen blends traditional techniques with avant-garde presentation to create dishes that tell a story.
+                    </p>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Every ingredient is sourced with precision, every plate is crafted with passion. Join us for an evening where culinary boundaries are pushed, and memories are made.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/60x60/334155/FFF?text=Chef" alt="Chef Signature" class="w-12 h-12 rounded-full border-2 border-amber-600">
+                        <div>
+                            <p class="text-white font-serif text-lg">Chef Zeyu</p>
+                            <p class="text-amber-500 text-sm">Executive Chef</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="text-amber-400 text-sm font-bold tracking-widest uppercase mb-2">Discover</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white serif">Signature Selections</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="group bg-slate-900 rounded-xl overflow-hidden border border-white/5 hover:border-amber-600/50 transition-all duration-300 hover:-translate-y-2 fade-in-section">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cocktail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="text-xl font-bold text-white serif">Midnight Velvet</h4>
+                            <span class="text-amber-400 font-bold">$18</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Aged bourbon, blackberry reduction, smoked rosemary, and a hint of dark chocolate bitters.</p>
+                        <span class="text-xs uppercase tracking-wider text-gray-500">Signature Cocktail</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group bg-slate-900 rounded-xl overflow-hidden border border-white/5 hover:border-amber-600/50 transition-all duration-300 hover:-translate-y-2 fade-in-section" style="transition-delay: 100ms;">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Steak" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="text-xl font-bold text-white serif">Wagyu A5 Reserve</h4>
+                            <span class="text-amber-400 font-bold">$120</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Premium Japanese Wagyu, truffle potato purée, seasonal glazed vegetables, and red wine jus.</p>
+                        <span class="text-xs uppercase tracking-wider text-gray-500">Main Course</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group bg-slate-900 rounded-xl overflow-hidden border border-white/5 hover:border-amber-600/50 transition-all duration-300 hover:-translate-y-2 fade-in-section" style="transition-delay: 200ms;">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dessert" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="text-xl font-bold text-white serif">Golden Sphere</h4>
+                            <span class="text-amber-400 font-bold">$24</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">White chocolate shell filled with passion fruit mousse, raspberry coulis, and edible gold leaf.</p>
+                        <span class="text-xs uppercase tracking-wider text-gray-500">Dessert</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="text-white border-b border-amber-600 pb-1 hover:text-amber-400 transition-colors">View Full Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-24 bg-slate-900 relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-white/10 shadow-2xl fade-in-section">
+                <div class="text-center mb-10">
+                    <h2 class="text-amber-400 text-sm font-bold tracking-widest uppercase mb-2">Reservations</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white serif">Book Your Table</h3>
+                    <p class="text-gray-400 mt-4">We recommend booking at least 24 hours in advance for the best experience.</p>
+                </div>
+
+                <form id="reservation-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-gray-400 mb-2">Date</label>
+                            <input type="date" id="date" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-colors">
+                        </div>
+                        <div>
+                            <label for="time" class="block text-sm font-medium text-gray-400 mb-2">Time</label>
+                            <select id="time" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-colors">
+                                <option value="">Select Time</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="guests" class="block text-sm font-medium text-gray-400 mb-2">Guests</label>
+                            <select id="guests" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-colors">
+                                <option value="1">1 Person</option>
+                                <option value="2" selected>2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5+">5+ People</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-colors">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-colors">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Special Requests</label>
+                        <textarea id="message" rows="3" placeholder="Allergies, special occasion, etc." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-colors"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-amber-600/30 transition-all duration-300 transform hover:-translate-y-1">
+                        Confirm Reservation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="serif text-3xl font-bold tracking-widest text-white block mb-6">ZEYU</a>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Elevating the dining experience through passion, precision, and unparalleled hospitality.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contact</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li>123 Culinary Avenue</li>
+                        <li>New York, NY 10012</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li>reservations@zeyu.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Hours</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex justify-between"><span>Mon - Thu</span> <span>5pm - 10pm</span></li>
+                        <li class="flex justify-between"><span>Fri - Sat</span> <span>5pm - 11pm</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span>4pm - 9pm</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-amber-600 hover:text-white transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-amber-600 hover:text-white transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2023 ZEYU Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer for Fade-in Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Navbar Background on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.replace('bg-slate-900/90', 'bg-slate-900');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.replace('bg-slate-900', 'bg-slate-900/90');
+            }
+        });
+
+        // Form Submission Handler
+        document.getElementById('reservation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'Reservation Confirmed!';
+            btn.classList.add('bg-green-600', 'hover:bg-green-700');
+            btn.classList.remove('bg-amber-600', 'hover:bg-amber-700');
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                btn.classList.add('bg-amber-600', 'hover:bg-amber-700');
+                this.reset();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
+
