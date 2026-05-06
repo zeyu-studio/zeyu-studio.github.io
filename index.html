@@ -812,6 +812,62 @@
         .scroll-top:hover {
             transform: translateY(-5px);
         }
+        /* Badge Positioning Fix */
+        .popular-card,
+        .loyalty-card,
+        .premium-card {
+            position: relative;
+            padding-top: 3.5rem !important;
+        }
+
+        .badge-popular,
+        .badge-loyalty,
+        .badge-premium {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: var(--gradient);
+            color: white;
+            padding: 0.35rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(30,64,175,0.3);
+            z-index: 10;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .badge-loyalty {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            box-shadow: 0 4px 10px rgba(245,158,11,0.3);
+        }
+
+        .badge-premium {
+            background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+            box-shadow: 0 4px 10px rgba(239,68,68,0.3);
+        }
+
+        /* Custom card styling */
+        .custom-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px dashed var(--primary-light);
+        }
+
+        /* Add-ons section specific styles */
+        #addons .portfolio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        #addons .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+        }
     </style>
 </head>
 <body>
@@ -827,6 +883,8 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#templates">Templates</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -1022,6 +1080,398 @@
         </div>
     </section>
 
+    <!-- Templates / Live Demos Section -->
+    <section class="portfolio" id="templates">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Live Demos</span>
+                <h2>Explore Our Template Library</h2>
+                <p>Ready-made designs you can customize, or get inspired for your next custom project</p>
+            </div>
+
+        <div class="portfolio-grid">
+            <!-- Template Card: Restaurant -->
+            <div class="portfolio-card fade-in">
+                <img src="https://i.ibb.co/B2V9cZsG/Screenshot-2026-05-06-225817.png" alt="Restaurant Template" class="portfolio-image">
+                <div class="portfolio-content">
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">HTML5</span>
+                        <span class="portfolio-tag">Tailwind CSS</span>
+                        <span class="portfolio-tag">Responsive</span>
+                        <span class="portfolio-tag">Demo</span>
+                    </div>
+                    <h3>Restaurant Website</h3>
+                    <p>A modern, appetizing template for restaurants & cafes. Features menu display, reservation form, and mobile-optimized design.</p>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <a href="https://zeyu-studio.github.io/restaurant.html" target="_blank" rel="noopener" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; font-size: 0.9rem;">
+                            <i class="fas fa-eye"></i> Live Demo
+                        </a>
+                        <a href="#contact" class="portfolio-link" style="align-self: center;">
+                            Want this for your business? <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+<!-- Template Card: ZEYU Butyy -->
+            <div class="portfolio-card fade-in">
+                <img src="https://i.ibb.co/VYgxk1RD/Screenshot-2026-05-06-225713.png" alt="ZEYU Butyy Template" class="portfolio-image">
+                <div class="portfolio-content">
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">PHP</span>
+                        <span class="portfolio-tag">MySQL</span>
+                        <span class="portfolio-tag">E-commerce</span>
+                        <span class="portfolio-tag">Demo</span>
+                    </div>
+                    <h3>ZEYU Butyy (E-commerce)</h3>
+                    <p>A full-featured online store template with product management, cart functionality, and secure checkout flow.</p>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <a href="https://zeyu-butyy.kesug.com/" target="_blank" rel="noopener" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; font-size: 0.9rem;">
+                            <i class="fas fa-eye"></i> Live Demo
+                        </a>
+                        <a href="#contact" class="portfolio-link" style="align-self: center;">
+                            Need a custom store? <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Template Card: Coming Soon (Optional) -->
+            <div class="portfolio-card fade-in" style="opacity: 0.7;">
+                <img src="https://via.placeholder.com/600x400/f1f5f9/94a3b8?text=Coming+Soon" alt="Coming Soon" class="portfolio-image" style="filter: grayscale(100%);">
+                <div class="portfolio-content">
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">React</span>
+                        <span class="portfolio-tag">Dashboard</span>
+                        <span class="portfolio-tag">Soon</span>
+                    </div>
+                    <h3>Admin Dashboard</h3>
+                    <p>A powerful, customizable admin panel template with analytics, user management, and dark mode support.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="portfolio-tag" style="background: rgba(6,182,212,0.1); color: var(--accent);">
+                            <i class="fas fa-clock"></i> Coming Soon
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <!-- CTA Banner -->
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--bg-alt); border-radius: 16px; border: 1px solid var(--border);" class="fade-in">
+            <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">🎨 Don't see what you need?</h3>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Every business is unique. Let's build a custom solution tailored to your brand, goals, and audience.
+            </p>
+            <a href="#contact" class="btn btn-primary">
+                <i class="fas fa-comments"></i>
+                Start Your Custom Project
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="services" id="pricing">
+    <div class="section-container">
+        <div class="section-header fade-in">
+            <span class="section-tag">Simple Pricing</span>
+            <h2>Invest in Your Digital Success</h2>
+            <p>Transparent pricing in Jordanian Dinar. No hidden fees. No surprises.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Basic Package -->
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Starter Website</h3>
+                <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                    From 100 JD
+                </p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">Perfect for small businesses getting online</p>
+                
+                <ul style="list-style: none; text-align: left; margin-bottom: 2rem; color: var(--text);">
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 3-5 Page Website</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Mobile Responsive</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Basic SEO Setup</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Contact Form</li>
+                </ul>
+                
+                <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                    Get Started <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- Business Package (MOST POPULAR) -->
+            <div class="service-card fade-in popular-card">
+                <div class="badge-popular">MOST POPULAR</div>
+                <div class="service-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Business Pro</h3>
+                <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                    From 300 JD
+                </p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">Ideal for growing businesses ready to scale</p>
+                
+                <ul style="list-style: none; text-align: left; margin-bottom: 2rem; color: var(--text);">
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 5-10 Page Website</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Advanced SEO + Analytics</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> CMS Integration</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Basic E-commerce</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 1 Month Free Support</li>
+                </ul>
+                
+                <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                    Let's Build It <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- Loyalty Points & Cards System -->
+            <div class="service-card fade-in loyalty-card">
+                <div class="badge-loyalty">CUSTOMER RETENTION</div>
+                <div class="service-icon" style="background: rgba(245,158,11,0.1); color: #f59e0b;">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>Loyalty & Rewards</h3>
+                <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                    From 420 JD
+                </p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">Keep customers coming back with rewards</p>
+                
+                <ul style="list-style: none; text-align: left; margin-bottom: 2rem; color: var(--text);">
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Points & Rewards System</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Digital Loyalty Cards</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Customer Management</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Special Offers & Notifications</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Reports & Analytics</li>
+                </ul>
+                
+                <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center; border-color: #f59e0b; color: #f59e0b;">
+                    Boost Retention <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- AI Integration Package -->
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI + Advanced</h3>
+                <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                    From 550 JD
+                </p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">For businesses leveraging cutting-edge tech</p>
+                
+                <ul style="list-style: none; text-align: left; margin-bottom: 2rem; color: var(--text);">
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Everything in Business Pro</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> AI Chatbot Integration</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Custom API Integrations</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Advanced E-commerce</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 3 Months Priority Support</li>
+                </ul>
+                
+                <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                    Discuss Your Project <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- iOS & Android Mobile App -->
+            <div class="service-card fade-in premium-card">
+                <div class="badge-premium">PREMIUM</div>
+                <div class="service-icon" style="background: rgba(239,68,68,0.1); color: #ef4444;">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>iOS & Android App</h3>
+                <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                    From 900 JD
+                </p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">Full mobile app for both platforms</p>
+                
+                <ul style="list-style: none; text-align: left; margin-bottom: 2rem; color: var(--text);">
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> iOS & Android App</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> User Registration & Login</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Push Notifications</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> In-App Store</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Payment System</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> App Store Publishing</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> 3 Months Support</li>
+                </ul>
+                
+                <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center; background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);">
+                    Build Your App <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- Custom Solution Card -->
+            <div class="service-card fade-in custom-card">
+                <div class="service-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--accent);">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Custom Solution</h3>
+                <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                    Let's Talk
+                </p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">Have a unique vision? We'll craft a solution tailored to your exact needs.</p>
+                
+                <ul style="list-style: none; text-align: left; margin-bottom: 2rem; color: var(--text);">
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Fully Custom Scope</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Flexible Payment Plans</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Dedicated Project Manager</li>
+                    <li style="margin-bottom: 0.75rem;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i> Post-Launch Strategy</li>
+                </ul>
+                
+                <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center; background: var(--accent);">
+                    Get Your Quote <i class="fas fa-comments" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Pricing Disclaimer -->
+        <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; background: rgba(30, 64, 175, 0.05); border-radius: 12px; border-left: 4px solid var(--primary);" class="fade-in">
+            <p style="color: var(--text-light); font-size: 0.95rem; margin: 0;">
+                <i class="fas fa-info-circle" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                <strong>Note:</strong> All prices are starting estimates in Jordanian Dinar (JD). Final pricing depends on project complexity, timeline, and specific requirements. 
+                <a href="#contact" style="color: var(--primary); font-weight: 600; text-decoration: none;">Contact us</a> for a personalized quote.
+            </p>
+        </div>
+
+        <!-- Value Proposition Banner -->
+        <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: var(--bg-alt); border-radius: 16px; border: 1px solid var(--border);" class="fade-in">
+            <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">💡 Why Invest With ZEYU Studio?</h3>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
+                <div style="text-align: center; max-width: 200px;">
+                    <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;"></i>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Security-First Development</p>
+                </div>
+                <div style="text-align: center; max-width: 200px;">
+                    <i class="fas fa-rocket" style="font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;"></i>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Fast, Optimized Performance</p>
+                </div>
+                <div style="text-align: center; max-width: 200px;">
+                    <i class="fas fa-headset" style="font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;"></i>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Ongoing Support Included</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add-on Services Section -->
+<section class="portfolio" id="addons">
+    <div class="section-container">
+        <div class="section-header fade-in">
+            <span class="section-tag">Add-on Services</span>
+            <h2>Enhance Your Website</h2>
+            <p>Additional services to take your online presence to the next level</p>
+        </div>
+
+        <div class="portfolio-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <!-- Domain -->
+            <div class="portfolio-card fade-in" style="text-align: center;">
+                <div class="portfolio-content">
+                    <div class="service-icon" style="margin: 0 auto 1rem; background: rgba(30, 64, 175, 0.1);">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Annual Domain Name</h3>
+                    <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                        15 JD<span style="font-size: 1rem; color: var(--text-light); font-weight: 400;">/year</span>
+                    </p>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Professional domain registration (.com, .net, .org, .jo)</p>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                        Register Domain <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hosting -->
+            <div class="portfolio-card fade-in" style="text-align: center;">
+                <div class="portfolio-content">
+                    <div class="service-icon" style="margin: 0 auto 1rem; background: rgba(6, 182, 212, 0.1); color: var(--accent);">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Annual Hosting</h3>
+                    <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                        25 JD<span style="font-size: 1rem; color: var(--text-light); font-weight: 400;">/year</span>
+                    </p>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Fast, secure hosting with 99.9% uptime guarantee</p>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                        Get Hosting <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Logo Design -->
+            <div class="portfolio-card fade-in" style="text-align: center;">
+                <div class="portfolio-content">
+                    <div class="service-icon" style="margin: 0 auto 1rem; background: rgba(245,158,11,0.1); color: #f59e0b;">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Professional Logo</h3>
+                    <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                        30 JD
+                    </p>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Custom logo design with unlimited revisions</p>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                        Design Logo <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- WhatsApp Integration -->
+            <div class="portfolio-card fade-in" style="text-align: center;">
+                <div class="portfolio-content">
+                    <div class="service-icon" style="margin: 0 auto 1rem; background: rgba(16, 185, 129, 0.1); color: var(--success);">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Integration</h3>
+                    <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                        10 JD
+                    </p>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Direct WhatsApp chat button on your website</p>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                        Add WhatsApp <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Translation -->
+            <div class="portfolio-card fade-in" style="text-align: center;">
+                <div class="portfolio-content">
+                    <div class="service-icon" style="margin: 0 auto 1rem; background: rgba(99, 102, 241, 0.1); color: #6366f1;">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Website Translation</h3>
+                    <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                        35 JD
+                    </p>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Arabic ↔ English professional translation</p>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                        Translate Site <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Maintenance -->
+            <div class="portfolio-card fade-in" style="text-align: center;">
+                <div class="portfolio-content">
+                    <div class="service-icon" style="margin: 0 auto 1rem; background: rgba(239, 68, 68, 0.1); color: #ef4444;">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Monthly Maintenance</h3>
+                    <p style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">
+                        40 JD<span style="font-size: 1rem; color: var(--text-light); font-weight: 400;">/month</span>
+                    </p>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Regular updates, backups, and security monitoring</p>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                        Start Maintenance <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-container">
@@ -1119,6 +1569,8 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#templates">Templates</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
