@@ -1525,28 +1525,62 @@
                     </div>
                 </div>
 
-                <form class="contact-form fade-in" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="john@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required placeholder="Project Inquiry">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                    </button>
-                </form>
+                <form class="contact-form fade-in" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Web3Forms Access Key (REQUIRED) -->
+    <input type="hidden" name="access_key" value="d6823b5f-b9e1-4490-9a4d-541126e33dcb">
+    
+    <!-- Optional: Redirect after submission -->
+    <input type="hidden" name="redirect" value="https://zeyu-studio.github.io/#contact">
+    
+    <!-- Optional: Subject line for your emails -->
+    <input type="hidden" name="subject" value="New Inquiry from ZEYU Studio Website">
+    
+    <!-- Optional: Enable reCAPTCHA (recommended for spam protection) -->
+    <!-- Get your key at https://web3forms.com/recaptcha -->
+    <!-- <input type="hidden" name="recaptcha_response" id="recaptchaResponse"> -->
+    
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="John Doe">
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="john@example.com">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone (Optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="079XXXXXXX">
+    </div>
+    <div class="form-group">
+        <label for="service">Interested In</label>
+        <select id="service" name="service" style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; background: white;">
+            <option value="">Select a service...</option>
+            <option value="Starter Website">Starter Website (100 JD)</option>
+            <option value="Business Pro">Business Pro (300 JD)</option>
+            <option value="Loyalty System">Loyalty System (420 JD)</option>
+            <option value="AI + Advanced">AI + Advanced (550 JD)</option>
+            <option value="Mobile App">Mobile App (900 JD)</option>
+            <option value="Custom Solution">Custom Solution</option>
+            <option value="Add-on Service">Add-on Service</option>
+            <option value="Other">Other / Just Saying Hi 👋</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+    </div>
+    
+    <!-- Honeypot spam protection (hidden from users) -->
+    <input type="text" name="botcheck" class="hidden" style="display: none;">
+    
+    <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitBtn">
+        <i class="fas fa-paper-plane"></i>
+        Send Message
+    </button>
+    
+    <!-- Success/Error messages -->
+    <div id="formMessage" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; display: none;"></div>
+</form>
             </div>
         </div>
     </section>
@@ -1669,24 +1703,68 @@
 
         fadeElements.forEach(el => observer.observe(el));
 
-        // Contact form handling
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            // Create mailto link
-            const subject = encodeURIComponent(data.subject);
-            const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`);
-            
-            window.location.href = `mailto:yousef.business98@gmail.com?subject=${subject}&body=${body}`;
-            
-            // Show success message
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
+        // Contact form handling with Web3Forms
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formMessage = document.getElementById('formMessage');
+
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Show loading state
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    formMessage.style.display = 'none';
+    
+    try {
+        const formData = new FormData(contactForm);
+        
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
         });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // Success!
+            formMessage.style.display = 'block';
+            formMessage.style.background = 'rgba(16, 185, 129, 0.1)';
+            formMessage.style.color = '#065f46';
+            formMessage.style.border = '1px solid #10b981';
+            formMessage.style.borderRadius = '8px';
+            formMessage.style.padding = '1rem';
+            formMessage.innerHTML = '<i class="fas fa-check-circle"></i> <strong>Thank you!</strong> Your message has been sent. We\'ll get back to you within 24 hours.';
+            
+            contactForm.reset();
+            
+            // Optional: Redirect after 3 seconds
+            // setTimeout(() => { window.location.href = 'https://zeyu-studio.github.io/#contact'; }, 3000);
+        } else {
+            // Error from Web3Forms
+            throw new Error(result.message || 'Something went wrong');
+        }
+    } catch (error) {
+        // Show error
+        formMessage.style.display = 'block';
+        formMessage.style.background = 'rgba(239, 68, 68, 0.1)';
+        formMessage.style.color = '#991b1b';
+        formMessage.style.border = '1px solid #ef4444';
+        formMessage.style.borderRadius = '8px';
+        formMessage.style.padding = '1rem';
+        formMessage.innerHTML = `<i class="fas fa-exclamation-circle"></i> <strong>Oops!</strong> ${error.message}. Please try again or email us directly.`;
+    } finally {
+        // Restore button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+        
+        // Hide message after 10 seconds
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 10000);
+    }
+});
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
